@@ -11,6 +11,20 @@ public class Gallery {
         this.stock = new ArrayList<>();
     }
     
+    // removes.artwork from stock
+    public void reduceArtwork(Artwork artwork){
+        for (Artwork art : this.stock) {
+            if (art.getTitle().equals(artwork.getTitle())){
+                // remove from stock
+                this.stock.remove(art);
+                this.till = this.till + artwork.getPrice();
+            } else {
+                break;
+            }
+        }
+    }
+    
+    
     public String getName(){
         return this.name;
     }
