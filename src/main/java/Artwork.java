@@ -1,10 +1,10 @@
 public class Artwork {
     private String title;
     private Artist artist;
-    private Float price;
+    private double price;
     private String nft;
 
-    public Artwork(String title, Artist artist, Float price, String nft){
+    public Artwork(String title, Artist artist, double price, String nft){
         this.title = title;
         this.artist = artist;
         this.price = price;
@@ -27,11 +27,11 @@ public class Artwork {
         this.artist = artist;
     }
 
-    public Float getPrice(){
+    public double getPrice(){
         return this.price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
