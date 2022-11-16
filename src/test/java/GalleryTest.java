@@ -12,6 +12,7 @@ public class GalleryTest {
     @BeforeEach
     public void setUp(){
         gallery = new Gallery("Tate");
+        
     }
     
     @Test
@@ -59,5 +60,23 @@ public class GalleryTest {
         gallery.setStock(testArray);
         
         assertThat(gallery.getStock().size()).isEqualTo(2);
+    }
+    
+    @Test
+    public void canReduceArtwork(){
+        Artist leo = new Artist("Leo");
+
+        Artwork artwork1 = new Artwork("Mona Lisa", leo, 860.0, "mona lisa 360");
+        Artwork artwork2 = new Artwork("Vitruvian Man", leo, 20.0, "Vitruvian Man 12");
+
+        ArrayList<Artwork> testArray = new ArrayList<Artwork>();
+        testArray.add(artwork1);
+        testArray.add(artwork2);
+
+        gallery.setStock(testArray);
+        
+        gallery.reduceArtwork(artwork1);
+        
+        assertThat(gallery.getStock().size()).isEqualTo(1);
     }
 }
