@@ -12,11 +12,14 @@ public class Gallery {
     }
     
     // removes.artwork from stock
+    // From a design point of view, the gallery should initiate the transaction.
+    // A sell method in the Gallery class should call buy methods in the customer.
     public void reduceArtwork(Artwork artwork){
         for (Artwork art : this.stock) {
             if (art.getTitle().equals(artwork.getTitle())){
                 // remove from stock
                 this.stock.remove(art);
+                // should use setter to access the till
                 this.till = this.till + artwork.getPrice();
             } else {
                 break;
@@ -24,6 +27,7 @@ public class Gallery {
         }
     }
     
+    // calculateArtworkValue will just loop through the gallery's stock and adds their prices to a running total, it should return an int/float
     
     public String getName(){
         return this.name;

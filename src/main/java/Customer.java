@@ -10,7 +10,7 @@ public class Customer {
     // buyArtwork(artwork's nft)
     // check if customer can afford (if wallet >= price)
    
-    
+   // SRP: we can split the buyartwork method into a boolean 'check if the customer can afford' and a void buy artwork method. These can be called by the gallery 
     public String buyArtwork(Artwork artwork, Gallery gallery){
         if (this.wallet >= artwork.getPrice()){
             // reduce artwork (artworks nft) from galleries stock
